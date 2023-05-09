@@ -11,7 +11,7 @@
   }
   div {
   	background-color: #edf3ec;
-    width: 180px;
+    width: 200px;
     height: 65px;
     padding-top: 1px;
     border-radius: 10px;
@@ -39,8 +39,8 @@
 	  var countDownDate = new Date("Feb 8, 2031 11:00").getTime();
   else if( (day==1||day==2||day==4||day==5) && (mins < 870) )
 	  var countDownDate = new Date("Feb 8, 2031 14:30").getTime();
-  else if( (day==1||day==2||day==4||day==5) && (mins < 1200) )
-	  var countDownDate = new Date("Feb 8, 2031 20:30").getTime();
+  else if( (day==1||day==2||day==4||day==5) && (mins < 960) )
+	  var countDownDate = new Date("Feb 8, 2031 16:00").getTime();
   else //random default
      var countDownDate = new Date("Feb 8, 2031 00:00").getTime();
 
@@ -59,20 +59,20 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Output the result in an element with id="demo"
-    /* if(day==1 || day==2 || day==4 || day==5) {
-      if(hr<16) {
-	document.getElementById("demo").innerHTML = "next class in: <br>0" + hours + ":";
-	if(minutes < 10)
-		
-		+ minutes + ":" + seconds;
-      } else      document.getElementById("demo").innerHTML = "class done for today~";
-    } else document.getElementById("demo").innerHTML = "no school today~";
+	//in class or not
+    let result=0;
     
-    let result = 0; */
+    if( ( (day==2||day==4||day==5) && (mins>=450) && (mins<540) )
+	 || ( (day==2||day==5) && (mins>=555) && (mins<645) )
+	 || ( (day==1||day==4) && (mins>=660) && (mins<750) )
+	 || ( (day==1||day==2||day==4||day==5) && (mins>=870) && (mins<960) ) )
+      result = "class ongoing<br>0";
+    else result = "next class in:<br>0";
+
+    // Output the result in an element with id="demo"
+    
     if(day==1 || day==2 || day==4 || day==5) {
       if(hr<16) {
-	result = "next class in: <br>0";
 	result = result.concat(hours,":");
     
 	if(minutes < 10) result = result.concat("0",minutes,":");
