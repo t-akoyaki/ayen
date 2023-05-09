@@ -59,7 +59,7 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-	//in class or not
+    //in class or not
     let result=0;
     
     if( ( (day==2||day==4||day==5) && (mins>=450) && (mins<540) )
@@ -70,7 +70,6 @@
     else result = "next class in:<br>0";
 
     // Output the result in an element with id="demo"
-    
     if(day==1 || day==2 || day==4 || day==5) {
       if(hr<16) {
 	result = result.concat(hours,":");
