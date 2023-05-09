@@ -60,12 +60,31 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="demo"
-    if(day==1 || day==2 || day==4 || day==5) {
-      if(hr<16)
-	document.getElementById("demo").innerHTML = "next class in: <br>0" + hours + ":" + minutes + ":" + seconds;
-      else      document.getElementById("demo").innerHTML = "class done for today~";
+    /* if(day==1 || day==2 || day==4 || day==5) {
+      if(hr<16) {
+	document.getElementById("demo").innerHTML = "next class in: <br>0" + hours + ":";
+	if(minutes < 10)
+		
+		+ minutes + ":" + seconds;
+      } else      document.getElementById("demo").innerHTML = "class done for today~";
     } else document.getElementById("demo").innerHTML = "no school today~";
+    
+    let result = 0; */
+    if(day==1 || day==2 || day==4 || day==5) {
+      if(hr<16) {
+	result = "next class in: <br>0";
+	result = result.concat(hours,":");
+    
+	if(minutes < 10) result = result.concat("0",minutes,":");
+	else result = result.concat(minutes,":");
 
+	if(seconds < 10) result = result.concat("0",seconds);
+	else result = result.concat(seconds); 
+      } else      result = "class done for today~";
+    } else result = "no school today~";
+    
+    document.getElementById("demo").innerHTML = result;  
+	  
     // If the count down is over, write some text 
     if (distance < 0) {
       clearInterval(x);
