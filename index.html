@@ -31,16 +31,22 @@
   let mins = (hr*60) + d.getMinutes()
   
   // Set the date we're counting down to
-  if( (day==2||day==4||day==5) && (mins < 450) )
+  if( (day==1||day==3||day==4||day==6) && (mins < 450) )
 	  var countDownDate = new Date("Feb 8, 2031 07:30").getTime();
-  else if( (day==2||day==5) && (mins < 555) )
+  else if( (day==1||day==4||day==6) && (mins < 555) )
 	  var countDownDate = new Date("Feb 8, 2031 09:15").getTime();
-  else if( (day==1||day==4) && (mins < 660) )
+  else if( (day==2) && (mins < 600) )
+	  var countDownDate = new Date("Feb 8, 2031 10:00").getTime();
+  else if( (0) && (mins < 660) )
 	  var countDownDate = new Date("Feb 8, 2031 11:00").getTime();
-  else if( (day==1||day==2||day==4||day==5) && (mins < 870) )
+  else if( (day==1||day==4) && (mins < 765) )
+	  var countDownDate = new Date("Feb 8, 2031 12:45").getTime();
+  else if( (0) && (mins < 870) )
 	  var countDownDate = new Date("Feb 8, 2031 14:30").getTime();
-  else if( (day==1||day==2||day==4||day==5) && (mins < 960) )
-	  var countDownDate = new Date("Feb 8, 2031 16:00").getTime();
+  else if( (day==1||day==4) && (mins < 975) )
+	  var countDownDate = new Date("Feb 8, 2031 16:15").getTime();
+  else if( (day==1||day==4) && (mins < 1065) )
+	  var countDownDate = new Date("Feb 8, 2031 17:45").getTime();
   else //random default
      var countDownDate = new Date("Feb 8, 2031 00:00").getTime();
 
@@ -62,15 +68,16 @@
     //in class or not
     let result=0;
     
-    if( ( (day==2||day==4||day==5) && (mins>=450) && (mins<540) )
+    /* if( ( (day==2||day==4||day==5) && (mins>=450) && (mins<540) )
 	 || ( (day==2||day==5) && (mins>=555) && (mins<645) )
 	 || ( (day==1||day==4) && (mins>=660) && (mins<750) )
 	 || ( (day==1||day==2||day==4||day==5) && (mins>=870) && (mins<960) ) )
       result = "class ongoing<br>0";
-    else result = "next class in:<br>0";
+    else */
+    result = "next class in:<br>0";
 
     // Output the result in an element with id="demo"
-    if(day==1 || day==2 || day==4 || day==5) {
+    if(day==1 || day==2 || day==3 || day==4 || day==6) {
       if(hr<16) {
 	result = result.concat(hours,":");
     
