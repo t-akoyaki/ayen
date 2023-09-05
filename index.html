@@ -45,8 +45,6 @@
 	  var countDownDate = new Date("Feb 8, 2031 14:30").getTime();
   else if( (day==1||day==4) && (mins < 975) )
 	  var countDownDate = new Date("Feb 8, 2031 16:15").getTime();
-  else if( (day==1||day==4) && (mins < 1065) )
-	  var countDownDate = new Date("Feb 8, 2031 17:45").getTime();
   else //random default
      var countDownDate = new Date("Feb 8, 2031 00:00").getTime();
 
@@ -78,7 +76,7 @@
 
     // Output the result in an element with id="demo"
     if(day==1 || day==2 || day==3 || day==4 || day==6) {
-      if(hr<16) {
+      if( countDownDate == new Date("Feb 8, 2031 00:00") ) {
 	result = result.concat(hours,":");
     
 	if(minutes < 10) result = result.concat("0",minutes,":");
@@ -86,7 +84,7 @@
 
 	if(seconds < 10) result = result.concat("0",seconds);
 	else result = result.concat(seconds); 
-      } else      result = "classes done<br>for today~";
+      } else      result = "no upcoming classes~";
     } else result = "no school<br>today~";
     
     document.getElementById("demo").innerHTML = result;  
