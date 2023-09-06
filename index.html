@@ -29,6 +29,7 @@
   let day = d.getDay()
   let hr = d.getHours()
   let mins = (hr*60) + d.getMinutes()
+  let ddone = 0;
   
   // Set the date we're counting down to
   if( (day==1||day==3||day==4||day==6) && (mins < 450) )
@@ -45,8 +46,10 @@
 	  var countDownDate = new Date("Feb 8, 2031 14:30").getTime();
   else if( (day==1||day==4) && (mins < 975) )
 	  var countDownDate = new Date("Feb 8, 2031 16:15").getTime();
-  else //random default
+  else { //random default
      var countDownDate = new Date("Feb 8, 2031 00:00").getTime();
+     let ddone = 1;
+  }
 
   // Update the count down every 1 second
   var x = setInterval(function() {
@@ -76,7 +79,7 @@
 
     // Output the result in an element with id="demo"
     if(day==1 || day==2 || day==3 || day==4 || day==6) {
-      if( countDownDate == new Date("Feb 8, 2031 00:00") ) {
+      if( !ddone ) {
 	result = result.concat(hours,":");
     
 	if(minutes < 10) result = result.concat("0",minutes,":");
