@@ -32,17 +32,17 @@
   var ddone = 0;
   
   // Set the date we're counting down to
-  if( (0) && (mins < 450) )
+  if( (day==3||day==6) && (mins < 450) )
 	  var countDownDate = new Date("Feb 8, 2031 07:30").getTime();
-  else if( (day==2||day==5) && (mins < 555) )
+  else if( (day==1||day==4) && (mins < 555) )
 	  var countDownDate = new Date("Feb 8, 2031 09:15").getTime();
-  else if( (day==2||day==4||day==5) && (mins < 660) )
+  else if( (day==1||day==4) && (mins < 660) )
 	  var countDownDate = new Date("Feb 8, 2031 11:00").getTime();
-  else if( (day==1||day==4) && (mins < 765) )
+  else if( (0) && (mins < 765) )
 	  var countDownDate = new Date("Feb 8, 2031 12:45").getTime();
-  else if( (day==1||day==2||day==5) && (mins < 870) )
+  else if( (day==1||day==4||day==5) && (mins < 870) )
 	  var countDownDate = new Date("Feb 8, 2031 14:30").getTime();
-  else if( (0) && (mins < 975) )
+  else if( (day==1||day==2||day==4) && (mins < 975) )
 	  var countDownDate = new Date("Feb 8, 2031 16:15").getTime();
   else { //random default
      var countDownDate = new Date("Feb 8, 2031 00:00").getTime();
